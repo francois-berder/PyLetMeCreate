@@ -48,39 +48,39 @@ Activation="OTAA"
 
 ## TTN
 ## ABP settings
-#Nwkskey="C33F67C358BE14476A27483C698C1C2A"                                                              
-#Appskey="54D1BA1A50462E0159046A89EBAC497B"            
-#Devaddr="2601127A"                                    
+#Nwkskey="..."                                                              
+#Appskey="..."            
+#Devaddr="..."                                    
                                                       
 ## OTAA settings                          
-Appkey="70C9833A7DCEA8CA55973E3D0F6DDCA8"
-Appeui="70B3D57EF00064C0"                 
-Deveui="70B3D57EF00064C0"                             
+Appkey="..."
+Appeui="..."                 
+Deveui="..."                             
                                                       
 ### SECOND TEST
 ## TTN, Pat's account
 ## ABP settings
-# Nwkskey="1965A425C1B5686D0E875CFE66B93EBE"
-# Appskey="33BE126B9C5F683C8A03E91D649FFBA4"
-# Devaddr="2601167D"
+# Nwkskey="..."
+# Appskey="..."
+# Devaddr="..."
 
 ## OTAA settings
-#Appkey="BD29678238DA20D94370F28DF62BE08A"
-#Appeui="70B3D57EF000677C"
-#Deveui="F5C0F2E0508F4A67"
+#Appkey="..."
+#Appeui="..."
+#Deveui="..."
 
 ## =======================================
 
 ## ThingsConnected
 ## ABP
-# Nwkskey="B09387216FFD843777B90F7C9D5E1F1D"
-# Appskey="F0285A271BA4ED12F6838A0575BA6F4C"
-# Devaddr="63EE1A5B"
+# Nwkskey="..."
+# Appskey="..."
+# Devaddr="..."
 
 ## OTAA settings
-# Appkey="B688D5FE27D6BC1B333E805296A66F17"
-# Appeui="97feda62e40303ba"
-# Deveui="F5C0F2E0508F4A67"
+# Appkey="..."
+# Appeui="..."
+# Deveui="..."
 
 ## =======================================
 
