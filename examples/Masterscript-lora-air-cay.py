@@ -47,28 +47,14 @@ Activation="OTAA"
 
 ## TTN
 ## ABP settings
-#Nwkskey="729B1EA1AE7A7129969DF4A92C92C8A5"
-#Appskey="096367074E7DD66ED938145942899496"
-#Devaddr="260119C1"
+#Nwkskey="..."
+#Appskey="..."
+#Devaddr="..."
 
 ## OTAA settings                          
-Appkey="790A9D08C4516B42A8DFED90B267C225"
-Appeui="70B3D57EF00064C0"                 
-Deveui="70B3D57EF00064C0"                             
-               
-## =======================================    
-### SECOND TEST
-
-## TTN, Pat's account
-## ABP settings
-# Nwkskey="1965A425C1B5686D0E875CFE66B93EBE"
-# Appskey="33BE126B9C5F683C8A03E91D649FFBA4"
-# Devaddr="2601167D"
-
-## OTAA settings
-#Appkey="BD29678238DA20D94370F28DF62BE08A"
-#Appeui="70B3D57EF000677C"
-#Deveui="F5C0F2E0508F4A67"
+Appkey="..."
+Appeui="..."                 
+Deveui="..."                             
 
 ## =======================================
 
