@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-# Adapted application script for Ci40 to work with LoRa RF Click Microcontroller
 # ===========================================================
-# https://github.com/MarisaAlina/Click_LoRa_RF
+# Adapted application script for Ci40 to work with LoRa RF Click Microcontroller
+# https://github.com/francois-berder/PyLetMeCreate
 # Marten Vijn BSD-license http://svn.martenvijn.nl/svn/LICENSE
-#
 # http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=dm164138
 # https://www.thethingsnetwork.org/docs/devices/
-# create an appiclation and add a device for ABP or OTAA
-# https://console.thethingsnetwork.org/applications
-#
+# create an application and add a device for ABP or OTAA: https://console.thethingsnetwork.org/applications
+# ===========================================================
 
 import time
 import os
@@ -66,7 +64,7 @@ Deveui="..."
 
 #print("Test ABP TTN")
 print("Test OTAA TTN")
-print("Test Air Data Transmission")
+print("Test AQ Data Transmission")
 ## =======================================
 
 def readline():
