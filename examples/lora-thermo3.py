@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-# Adapted application script for Ci40 to work with LoRa RF Click Microcontroller
 # ===========================================================
-# https://github.com/MarisaAlina/Click_LoRa_RF
+# Adapted application script for Ci40 to work with LoRa RF Click Microcontroller
+# https://github.com/francois-berder/PyLetMeCreate
 # Marten Vijn BSD-license http://svn.martenvijn.nl/svn/LICENSE
-#
 # http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=dm164138
 # https://www.thethingsnetwork.org/docs/devices/
-# create an appiclation and add a device for ABP or OTAA
-# https://console.thethingsnetwork.org/applications
-#
+# create an application and add a device for ABP or OTAA: https://console.thethingsnetwork.org/applications
+# ===========================================================
 
 import time
 # import serial
@@ -17,7 +15,7 @@ import re
 import struct
 
 # imported these Ci40 specific libraries from https://github.com/francois-berder/PyLetMeCreate/blob/master/examples/lora_example.py
-# first two are for connecting the ci40 pins with LoRa pins, latter for UART (interface), and baude rate
+# first two are for connecting the ci40 pins with LoRa pins, latter for UART (interface), and baudrate (ie symbols per second)
 from letmecreate.core.common import MIKROBUS_2
 from letmecreate.core import gpio
 from letmecreate.core import uart
@@ -67,7 +65,7 @@ Deveui="..."
 
 #print("Test ABP TTN")
 print("Test OTAA TTN")
-print("Test Air Data Transmission")
+print("Test Thermo Data Transmission")
 ## =======================================
 
 def readline():
@@ -98,8 +96,7 @@ def send(data):
 
 ## Thermo click 
 """This example uses Thermo3 Click and the wrapper of the PyLetMeCreate
-library.
-It reads some values from the sensor and exits.
+library. It reads some values from the sensor and exits.
 The Thermo sensor click was inserted in Mikrobus 1 before running this program.
 """
 def read_thermo():
