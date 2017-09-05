@@ -43,21 +43,21 @@ Activation="OTAA"
 
 ## TTN
 ## ABP settings
-#Nwkskey="1F01907B33D556E4665F6C4DC1361EB9"
-#Appskey="83C7A31C0BCB9C7E9B53E9A15E574CDC"
-#Devaddr="26011058"                                   
+#Nwkskey="..."
+#Appskey="..."
+#Devaddr="..."                                   
      
 ## my_ci40
 ## OTAA settings                          
-Appkey="790A9D08C4516B42A8DFED90B267C225"
-Appeui="70B3D57EF00064C0"                 
-Deveui="70B3D57EF00064C0"   
+Appkey="..."
+Appeui="..."                 
+Deveui="..."   
 
 ## Kevin's Device    
 ## OTAA settings                          
-#Appkey="3D59713A24CB77265A157B8B42CF58DF"
-#Appeui="70B3D57EF00064C0"                 
-#Deveui="70B3D57EF000691F"   
+#Appkey="..."
+#Appeui="..."                 
+#Deveui="..."   
 
 ## =======================================
 
