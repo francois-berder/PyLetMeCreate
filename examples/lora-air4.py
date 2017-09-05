@@ -49,15 +49,15 @@ Activation="OTAA"
      
 ## my_ci40
 ## OTAA settings                          
-#Appkey="..."
-#Appeui="..."                 
-#Deveui="..."   
-
-## Kevin's Device    
-## OTAA settings                          
 Appkey="..."
 Appeui="..."                 
 Deveui="..."   
+
+## Kevin's Device    
+## OTAA settings                          
+#Appkey="..."
+#Appeui="..."                 
+#Deveui="..."   
 
 ## =======================================
 
@@ -128,7 +128,7 @@ def read_air():
         air_wrapper = "0403" +b  
     # sending on channel 04, hex code 02 for analog INput/ hex 03 for analog OUTput
         send("mac tx cnf 1 "+ str(air_wrapper))
-        time.sleep(500)
+        time.sleep(2)
     # Release I2C
     i2c.release()  
     
