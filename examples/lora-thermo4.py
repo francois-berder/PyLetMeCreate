@@ -21,7 +21,6 @@ from letmecreate.core import gpio
 from letmecreate.core import uart
 from letmecreate.core.uart import UART_BD_57600
 
-
 ## Thermo
 from letmecreate.core import i2c
 from letmecreate.core.common import MIKROBUS_1
@@ -31,18 +30,18 @@ from letmecreate.click import thermo3
 # writeconfig=0
 writeconfig=1 
 
+## Relic
 # Find ports on Ci40 via ls -l /dev/tty* -> /dev/ttySC
 # Serial 
 # SerialDev="/dev/ttyACM0"
 # SerialDev="/dev/ttyUSB0"
 ## =======================================
-## asign activation APB or OTAA                                                                     
+
+## assign activation: APB or OTAA                                                                     
 #Activation="ABP"                                                                                   
 Activation="OTAA" 
-## =======================================
 
 ## TTN
-
 ## ABP settings
 #Nwkskey="1F01907B33D556E4665F6C4DC1361EB9"
 #Appskey="83C7A31C0BCB9C7E9B53E9A15E574CDC"
@@ -53,7 +52,6 @@ Activation="OTAA"
 Appkey="790A9D08C4516B42A8DFED90B267C225"
 Appeui="70B3D57EF00064C0"                 
 Deveui="70B3D57EF00064C0"   
-
 
 ## Kevin's Device    
 ## OTAA settings                          
@@ -66,25 +64,8 @@ Deveui="70B3D57EF00064C0"
 #print("Test ABP TTN")
 print("Test OTAA TTN")
 print("Test Thermo Data Transmission")
+
 ## =======================================
-
-## Ci40 receiving lines from lora tx 
-def readline():
-	have_cr = False
-# preparing a "line": empty byte array onto which chars from lora tx are appended if \r\n was encountered
-	line = bytearray()
-	while True:
-		buff = uart.receive(1)
-		char = buff [0]
-		line.append(char)
-# State Machine to recognise a newline concept: https://github.com/francois-berder/LetMeCreate/blob/master/src/click/lora.c
-		if char == 13:
-			have_cr = True
-		elif char == 10 and have_cr == True:
-			return line
-		else:
-			have_cr = False
-
 
 ## sending encoded bytes via uart to lora tx (Ci40 -> lora tx)
 def send(data):
@@ -103,6 +84,25 @@ def send(data):
 # deletes last char to cleanup bytearray from \r\n 	
 	rdata = rdata[:-1]
 	print(rdata.decode())
+
+	
+## Ci40 receiving lines from lora tx 
+def readline():
+	have_cr = False
+# preparing a "line": empty byte array onto which chars from lora tx are appended if \r\n was encountered
+	line = bytearray()
+	while True:
+		buff = uart.receive(1)
+		char = buff [0]
+		line.append(char)
+# State Machine to recognise a newline concept: https://github.com/francois-berder/LetMeCreate/blob/master/src/click/lora.c
+		if char == 13:
+			have_cr = True
+		elif char == 10 and have_cr == True:
+			return line
+		else:
+			have_cr = False
+			
 
 ## Thermo click 
 """This example uses Thermo3 Click and the wrapper of the PyLetMeCreate
@@ -133,6 +133,8 @@ def read_thermo():
         thermo3.disable()   
     # Release I2C
     i2c.release()    
+	
+## =======================================
 
 ## setting the pins from lora tx on output high to switch it on
 # https://github.com/CreatorDev/LetMeCreate/blob/master/src/click/lora.c
@@ -146,12 +148,15 @@ gpio.init(pin)
 gpio.set_direction(pin, gpio.GPIO_OUTPUT)
 gpio.set_value(pin, 1)
 
+## =======================================
+
 ## UART = serial protocol for pins of Ci40 and lora tx to communicate                                                                                              
 # https://github.com/CreatorDev/PyLetMeCreate/blob/master/examples/lora_example.py                                                                                 
 uart.init()                                                                                                                                                        
 uart.select_bus(MIKROBUS_2)                                                                                                                                        
 uart.set_baudrate(UART_BD_57600)  
 
+## =======================================
 
 send("sys reset")
 time.sleep(1)
