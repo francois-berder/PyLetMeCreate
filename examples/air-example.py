@@ -21,3 +21,4 @@ print('{} values from air_quality'.format(air_quality.get_measure(MIKROBUS_1)))
 
 # Release I2C
 i2c.release()
+
